@@ -47,20 +47,20 @@ SimpleCPU και εφαρμόζει το ίδιο σύνολο λειτουργ�
 κάθε αποτέλεσμα (1,2,3,4,5,6) και το εκτυπώνουμε.
 
 Εκτελώντας το παραπάνω πρόγραμμα στον gem5 με μοντέλο cpu τη **MinorCPU** πήραμε τα εξής στατιστικά:  
-+ sim_ticks + 3570030000 # Number of ticks simulated  
-+ sim_seconds + 0.003570 # Number of seconds simulated  
++ sim_ticks  3570030000 # Number of ticks simulated  
++ sim_seconds  0.003570 # Number of seconds simulated  
 	
 Εκτελώντας το παραπάνω πρόγραμμα στον gem5 με μοντέλο cpu τη **TimingSimpleCPU** πήραμε τα εξής στατιστικά:  
-+ sim_ticks + 8199441000 # Number of ticks simulated  
-+ sim_seconds + 0.008199 # Number of seconds simulated  
++ sim_ticks  8199441000 # Number of ticks simulated  
++ sim_seconds  0.008199 # Number of seconds simulated  
 	
 Αλλάζοντας την συχνότητα σε **3GHz**, στην **MinorCPU** έχουμε:  
- + sim_ticks + 2387693583 # Number of ticks simulated  
- + sim_seconds + 0.002388 # Number of seconds simulated  
+ + sim_ticks  2387693583 # Number of ticks simulated  
+ + sim_seconds  0.002388 # Number of seconds simulated  
 	
 Αλλάζοντας την συχνότητα σε **3GHz**, στην **TimingSimpleCPU** έχουμε:  
- + sim_ticks + 5470539318 # Number of ticks simulated  
- + sim_seconds + 0.005471 # Number of seconds simulated  
+ + sim_ticks  5470539318 # Number of ticks simulated  
+ + sim_seconds  0.005471 # Number of seconds simulated  
 	
 Παρατηρούμε ότι καθώς αυξάνουμε την συχνότητα του ρολογιού μειώνεται και ο χρόνος εκτέλεσης (κάτι που είναι προφανές). Συγκρίνοντας, 
 τώρα, τα δύο μοντέλα παρατηρούμε ότι η εκτέλεση του προγράμματος με τη MinorCPU γίνεται γρηγορότερα από ότι με τη TimingSimpleCPU. 
