@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
+//Dice program
 int dice()
 {
     int x=1+rand()%6;
