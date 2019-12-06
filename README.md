@@ -21,7 +21,7 @@ IcachePort για την l-cache, Fetch2 για την αποσύνθεση τη
 εκτέλεσης της εντολής (Execute) και διεπαφής της μνήμης δεδομένων με LSQ ουρά αποθήκευσης για memory ref. instructions.
 
 Το **SimpleCPU** μοντέλο είναι ένα καθαρά λειτουργικό in-order μοντέλο για περιπτώσεις που ένα λεπτομερές μοντέλο δεν είναι απαραίτητο. 
-Χωρίζεται σε τρεις κατηγορίες: _BaseSimpleCPU_, _AtomicSimpleCPU_ και _TimingSimpleCPU_.
+Χωρίζεται σε τρεις κατηγορίες: _BaseSimpleCPU_, _AtomicSimpleCPU_ και _TimingSimpleCPU_.  
 1)Το **BaseSimpleCPU** ορίζει λειτουργίες για τον έλεγχο των interrupts, τη ρύθμιση του fetch request, τον χειρισμό post-execute δράσεων, 
 και τη προώθηση του υπολογιστή στην επόμενη εντολή. Παρόλα αυτά δεν μπορεί να τρέξει μόνο του και πρέπει να χρησιμοποιήσει μία απ τις 
 κλάσεις, είτε το AtomicSimpleCPU είτε το TimingSimpleCPU.
