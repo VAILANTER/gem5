@@ -6,36 +6,6 @@
  1. Στις προσομοιώσεις που κάνουμε στον gem5 χρησιμοποιούμε το MinorCPU μοντέλο cpu. Ο συγκεκριμένος επεξεργαστής έχει cache line με μέγεθος ίσο με 64 B. Η cache του είναι τύπου set-associative, με την L1 cache (data και instruction) να είναι 2-way set-associative, δηλαδή είναι χωρισμένη σε σύνολα κάθε ένα από τα οποία περιέχει 2 blocks, και με την L2 cache να είναι 8-way set-associative, δηλαδή είναι χωρισμένη σε σύνολα κάθε ένα από τα οποία περιέχει 8 blocks. Όσων αφορά τα μεγέθη των caches, η L1 cache που χωρίζεται στις L1 data cache και L1 instruction cache, έχει μεγέθη 65536 B και 32768 B αντίστοιχα. Η L2 cache έχει μέγεθος 2097152 B.
 
  2. Στον gem5 εκτελέστηκαν τα παρακάτω benchmarks και τα αποτελέσματα είναι ως εξής :  
-	**specbzip**  
- (i) Χρόνος εκτέλεσης = 0.083982 (sim_seconds)  
- (ii) CPI = 1.679650 (system.cpu.cpi)  
- (iii) miss rates: L1 Data cache = 0.014798 (system.cpu.dcache.overall_miss_rate::total)  
-		   L1 Instruction cache = 0.000077 (system.cpu.icache.overall_miss_rate::total)  
-		   L2 cache = 0.282163 (system.l2.overall_miss_rate::total)  
-	**specmcf**  
- (i) Χρόνος εκτέλεσης = 0.064955  
- (ii) CPI = 1.299095  
- (iii) miss rates: L1 Data cache = 0.002108  
-		   L1 Instruction cache = 0.023612  
-		   L2 cache = 0.055046  
-	**spechmmer**  
- (i) Χρόνος εκτέλεσης = 0.059396  
- (ii) CPI = 1.187917  
- (iii) miss rates: L1 Data cache = 0.001637  
-		   L1 Instruction cache = 0.000221  
-		   L2 cache = 0.077760  
-	**specsjeng**  
- (i) Χρόνος εκτέλεσης = 0.513528  
- (ii) CPI = 10.270554  
- (iii) miss rates: L1 Data cache = 0.121831  
-		   L1 Instruction cache = 0.000020  
-		   L2 cache = 0.999972  
-	**speclibm**  
- (i) Χρόνος εκτέλεσης = 0.174671  
- (ii) CPI = 3.493415   
- (iii) miss rates: L1 Data cache = 0.060972  
-		   L1 Instruction cache = 0.000094  
-		   L2 cache = 0.9999440  
 
 |      			 			 		     	|  			Χρόνος εκτέλεσης 		 	|      			CPI 		    	|            	| Caches Miss Rates 	|            	|
 |:-----------:	|:------------------:	|:------------:	|:----------:	|:-----------------:	|:----------:	|
