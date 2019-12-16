@@ -22,17 +22,17 @@
 	**specbzip**  
 (χωρίς την παράμετρο --cpu-clock=1GHz)  
 system.clk_domain.clock = 1000  
-cpu_cluster.clk_domain.clock = 500  
+**cpu_cluster.clk_domain.clock = 500**  
 (με την παράμετρο --cpu-clock=1GHz)  
 system.clk_domain.clock = 1000  
-cpu_cluster.clk_domain.clock = 1000  
+**cpu_cluster.clk_domain.clock = 1000**  
 	**specmcf**  
 (χωρίς την παράμετρο --cpu-clock=1GHz)  
 system.clk_domain.clock = 1000  
-cpu_cluster.clk_domain.clock = 500  
+**cpu_cluster.clk_domain.clock = 500**  
 (με την παράμετρο --cpu-clock=1GHz)  
 system.clk_domain.clock = 1000  
-cpu_cluster.clk_domain.clock = 1000  
+**cpu_cluster.clk_domain.clock = 1000**  
 
 Παρατηρούμε αρχικά ότι χωρίς την παράμετρο --cpu-clock=1GHz ο cpu χρονίζεται στα 2GHz by default από τις ρυθμίσεις, καθώς βλέπουμε στα στατιστικά ότι η περίοδος του ρολογιού της cpu είναι 500nseconds. Χρησιμοποιώντας την παράμετρο, η περίοδος ρολογιού της cpu γίνεται 1000nseconds που σημαίνει ότι χρονίζεται στο 1GHz. Επίσης παρατηρούμε ότι system.clk_domain.clock παραμένει σταθερό στα 1000nseconds παρ'όλες τις αλλαγές που κάνουμε ή δεν κάνουμε. Αυτό συμβαίνει διότι το ρολόι αυτό δεν σχετίζεται με το ρολόι της cpu μας, αλλά αντιπροσωπεύει την συχνότητα της προσομοίωσης.  
 
