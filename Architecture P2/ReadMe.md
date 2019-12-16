@@ -59,11 +59,11 @@ cpu_cluster.clk_domain.clock = 1000
 
 Χρόνοι εκτέλεσης των benchmarks με --cpu-clock=1GHz :  
 	  sim_seconds     CPI  
-specbzip   0.161025	1.610247  
-specmcf    0.127942	1.279422  
-spechmmer  0.118530	1.185304  
-specsjeng  0.704056	7.040561  
-speclibm   0.262327	2.623265  
+specbzip   0.161025     1.610247  
+specmcf    0.127942     1.279422  
+spechmmer  0.118530     1.185304  
+specsjeng  0.704056     7.040561  
+speclibm   0.262327     2.623265  
 
 Παρατηρούμε ότι με διπλασιασμό της συχνότητας της cpu έχουμε μείωση του χρόνου εκτέλεσης σχεδόν στον μισό σε κάθε benchmark. Γενικά δεν υπάρχει τέλειο scaling καθώς οι δυνατότητες του επεξεργαστή μας δεν αξιοποιούνται πλήρως, καθώς έχουμε καθυστερήσεις από την κρυφή και την κύρια μνήμη. Υποθέτοντας ότι αυτές οι καθυστερήσεις δεν υπάρχουν, με διπλασιασμό της συχνότητας της cpu, περιμένουμε μείωση του χρόνου εκτέλεσης ακριβώς στον μισό.  
 ![Benchmarks](/Architecture%20P2/src/Documents/Benchmarks.png "Benchmarks")
@@ -75,47 +75,47 @@ speclibm   0.262327	2.623265
 
 Αύξηση assoc για L1 (βελτίωση στα miss rate της L1)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=64  
-specbzip2_0		1.747352	0.013324	0.000070	0.436026
+specbzip2_0             1.747352             0.013324             0.000070             0.436026
 
 Αύξηση της cache line (βελτίωση στα miss rate της L1 και της L2)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=128  
-specbzip2_1		1.731613	0.012827	0.000053	0.318973  
+specbzip2_1             1.731613             0.012827             0.000053             0.318973  
 
 Αύξηση του μεγέθους της L2 (βελτίωση στο miss rate της L2)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=1024kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=64  
-specbzip2_2		1.694702	0.013332	0.000070	0.356782
+specbzip2_2             1.694702             0.013332             0.000070             0.356782
 
 Αύξηση της cache line και αύξηση του μεγέθους της L2 (βελτίωση στo miss rate της L2)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=1024kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=8 --cacheline_size=128  
-specbzip2_3		1.674064	0.012828	0.000053	0.229720
+specbzip2_3             1.674064             0.012828             0.000053             0.229720
 
 Μείωση assoc για L1 (αύξηση στα miss rate της L1)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=1 --l1d_assoc=1 --l2_assoc=8 --cacheline_size=128  
-specbzip2_4		1.785882	0.017855	0.000063	0.226463
+specbzip2_4             1.785882             0.017855             0.000063             0.226463
 
 Μείωση assoc για L2 (αύξηση στο miss rate της L2)  
 -l1d_size=64kB --l1i_size=64kB --l2_size=512kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=128  
-specbzip2_5		1.733933	0.012826	0.000053	0.324431
+specbzip2_5             1.733933             0.012826             0.000053             0.324431
 
 Αύξηση του μεγέθους της L2 (βελτίωση στο miss rate της L2)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=2048kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=128  
-specbzip2_6		1.649439	0.012825	0.000053	0.196262
+specbzip2_6             1.649439             0.012825             0.000053             0.196262
 
 Αύξηση του μεγέθους της L2 (βελτίωση στο miss rate της L2)  
 --l1d_size=64kB --l1i_size=64kB --l2_size=4096kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=4 --cacheline_size=128  
-specbzip2_7		1.632153	0.012808	0.000053	0.174218
+specbzip2_7             1.632153             0.012808             0.000053             0.174218
 
 Αύξηση του μεγέθους της L1 και μείωση assoc για L2(βελτίωση στα miss rate της L1 και αύξηση στα miss rate της L2)  
 --l1d_size=128kB --l1i_size=128kB --l2_size=4096kB --l1i_assoc=4 --l1d_assoc=4 --l2_assoc=2 --cacheline_size=128  
-specbzip2_8		1.608796	0.009823	0.000052	0.231588
+specbzip2_8             1.608796             0.009823             0.000052             0.231588
 
 Μείωση του assoc της L1 και της cache line (αύξηση στα miss rate της L1 και της L2)  
 --l1d_size=128kB --l1i_size=128kB --l2_size=4096kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=4 --cacheline_size=64  
-specbzip2_9		1.568549	0.011618	0.000070	0.324134
+specbzip2_9             1.568549             0.011618             0.000070             0.324134
 
 Αύξηση της cache line (βελτίωση στα miss rate της L1 και της L2)  
 --l1d_size=128kB --l1i_size=128kB --l2_size=4096kB --l1i_assoc=2 --l1d_assoc=2 --l2_assoc=4 --cacheline_size=256  
-specbzip2_10		1.561447	0.011133	0.000040	0.133308
+specbzip2_10             1.561447             0.011133             0.000040             0.133308
 
 
 Δοκιμές για το 2ο benchmark :  
